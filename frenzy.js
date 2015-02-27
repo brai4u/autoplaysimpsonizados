@@ -6,6 +6,13 @@ var getUrl   = document.URL;
 
 var frameBase = null;
 
+$('document').keyup(function (e){
+	//esc key
+	if(e.keycode == 27){
+		$(location).attr('href', urlBase);
+	} 	
+});
+
 if(getUrl.indexOf("temporada") !=-1){
 	frameBase = $("#frmvid")[0].contentDocument;
 }
