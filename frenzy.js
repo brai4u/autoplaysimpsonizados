@@ -6,23 +6,20 @@ var getUrl   = document.URL;
 
 var frameBase = null;
 
-// navegation
-$(document).keyup(function (e){
-	// esc key
-	if(e.keycode == 27){
-		$(location).attr('href', urlBase);
-	}
-	
-	// right arrow
-	if(e.keycode == 39){
-		otroEpisodio();
-	}
-	
-	// enter key
-	// play this cap
-	if(e.keycode == 13){
-		next();
-	}
+$(document).ready(function (){
+	$(document).keyup(function (e){
+		if(e.keyCode == 27){
+			$(location).attr('href', urlBase);
+		}
+
+		if(e.keyCode == 13){
+			next();
+		}
+
+		if(e.keyCode == 39){
+			otroEpisodio();
+		}
+	});
 });
 
 if(getUrl.indexOf("temporada") !=-1){
